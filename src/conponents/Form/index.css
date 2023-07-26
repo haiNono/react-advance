@@ -1,0 +1,14 @@
+.form {
+  width: 300px;
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: row;
+  width: 310px;
+  height: 20px;
+  justify-content: space-around;
+}

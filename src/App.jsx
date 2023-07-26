@@ -1,48 +1,32 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import Form from './conponents/Form'
+import FormItem from './conponents/Form/Item'
+import Input from './conponents/Input'
 
-class App extends React.Component {
-  state = { number: 0 }
-  // 项目中使用的是react18版本，采用的是concurrent模式而不是legacy模式
-  // 因此，setState都是异步的！！！！！！！！！
-  handleClick = () => {
-    this.setState({ number: this.state.number + 1 }, () => {
-      console.log('callback1', this.state.number)
-    })
-    console.log(this.state.number)
-    this.setState({ number: this.state.number + 1 }, () => {
-      console.log('callback2', this.state.number)
-    })
-    console.log(this.state.number)
-    this.setState({ number: this.state.number + 1 }, () => {
-      console.log('callback3', this.state.number)
-    })
-    console.log(this.state.number)
+function App() {
+  const form = useRef()
+  const submit = () => {
+    form.current.submit(console.log)
   }
-
-  handleDelayClick = () => {
-    this.setState({ number: this.state.number + 1 }, () => {
-      console.log('callback1', this.state.number)
-    })
-    console.log(this.state.number)
-    this.setState({ number: this.state.number + 1 }, () => {
-      console.log('callback2', this.state.number)
-    })
-    console.log(this.state.number)
-    this.setState({ number: this.state.number + 1 }, () => {
-      console.log('callback3', this.state.number)
-    })
-    console.log(this.state.number)
+  const reset = () => {
+    form.current.reset()
   }
-
-  render() {
-    return (
-      <div>
-        <h3>{this.state.number}</h3>
-        <button onClick={this.handleClick}>点我啊笨蛋</button>
-        <button onClick={this.handleDelayClick}>我能延时哦</button>
+  return (
+    <>
+      <Form ref={form}>
+        <FormItem label="name" name="name">
+          <Input></Input>
+        </FormItem>
+        <FormItem label="password" name="password">
+          <Input></Input>
+        </FormItem>
+      </Form>
+      <div className="buttons">
+        <button onClick={submit}>提交</button>
+        <button onClick={reset}>重置</button>
       </div>
-    )
-  }
+    </>
+  )
 }
 
 export default App
