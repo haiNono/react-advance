@@ -4,8 +4,8 @@ module.exports = {
     es2021: true,
     node: true
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
   overrides: [],
+  extends: ['react-app', 'react-app/jest'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module'
