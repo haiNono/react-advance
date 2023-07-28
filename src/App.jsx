@@ -1,12 +1,12 @@
-import React from 'react'
-import ScrollView from './components/ScrollView'
+import React, { useRef, useEffect } from 'react'
+import Father from './components/ref/Father'
 
 function App() {
-  return (
-    <>
-      <ScrollView />
-    </>
-  )
+  const ref = useRef()
+  useEffect(() => {
+    console.log(ref, 'current')
+  }, [])
+  return <Father onRef={ref} />
 }
 
 export default App
