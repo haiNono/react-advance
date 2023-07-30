@@ -1,11 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import { asyncLoad } from './components/HOC/DynamicLoad/asyncLoad'
-const Component = asyncLoad(() => import('./components/HOC/DynamicLoad'))
-console.log(Component, 'class')
+import Pure from './components/RenderOptimize/pure'
 
 function App() {
-  return <Component />
+  return <Pure />
 }
 
 export default App
