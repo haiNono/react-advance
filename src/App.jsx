@@ -1,12 +1,11 @@
-import React, { useRef, useEffect } from 'react'
-import Father from './components/ref/Father'
+/* eslint-disable no-unused-vars */
+import React from 'react'
+import { asyncLoad } from './components/HOC/DynamicLoad/asyncLoad'
+const Component = asyncLoad(() => import('./components/HOC/DynamicLoad'))
+console.log(Component, 'class')
 
 function App() {
-  const ref = useRef()
-  useEffect(() => {
-    console.log(ref, 'current')
-  }, [])
-  return <Father onRef={ref} />
+  return <Component />
 }
 
 export default App
