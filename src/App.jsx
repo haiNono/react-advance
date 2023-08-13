@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import Pure from './components/RenderOptimize/pure'
+import SyntheticEvent from './components/SyntheticEvevt'
 
 function App() {
-  return <Pure />
+  return <SyntheticEvent />
 }
 
 export default App
