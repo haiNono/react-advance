@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import Pure from './components/RenderOptimize/pure'
+import Root from './components/Redux/react-redux/Root'
 
 function App() {
-  return <Pure />
+  return <Root />
 }
 
 export default App
